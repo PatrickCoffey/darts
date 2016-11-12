@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Darts - {{ notice.title}}</title>
+{% endblock %}
+
+{% block header %}
+<h2>{{ notice.title }}</h2>
+<h5>{{ notice.author }}</h5>
+{% endblock%}
+
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <p>{{ notice.text }}</p>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block title %}
+<title>Darts - Event {{ event }}</title>
+{% endblock %}
+
+{% block extra_css %}
+{{ form.media }}
+{% endblock %}
+
+{% block header %}
+<h2>Event - {{ event }}</h2>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row col-sm-4">
+        <form class="form" method="POST" action="">
+          {% csrf_token %}
+          {{ form_type.as_p }}
+          {{ form_player.as_p }}
+          {% if form_score %}
+            {% for field in form_score %}
+              {% if "home" in field %}
+              
+              {% elif "away" %}
+            {% endfor %}
+          {{ endif }}
+          <input class="btn btn-primary" type="submit" value="Continue"></input>
+        </form>
+      </div>
+    </div>
+{% endblock %}

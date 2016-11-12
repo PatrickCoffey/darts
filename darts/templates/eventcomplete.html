@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Darts - {{ notice.title}}</title>
+{% endblock %}
+
+{% block header %}
+<h2>Event Complete!</h2>
+{% endblock%}
+
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <ul>
+          <li>Event Date: {{ event.event_date }}</li>
+          <li>Home Team: {{ event.home_team }}</li>
+          <li>Away Team: {{ event.away.team }}</li>
+        </ul>
+      </div>
+    </div>
+{% endblock %}

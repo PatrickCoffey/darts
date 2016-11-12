@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Darts - Notice Board</title>
+{% endblock %}
+
+{% block header %}
+<h1>Notice Board</h1>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+    {% for notice in notices %}
+      <div class="row">
+        <h2>
+          <a href="/noticeboard/{{ notice.slug }}">
+            {{ notice.title }}
+          </a>
+        </h2>
+        <p>{{ notice.text|truncatewords:"100" }}</p>
+      </div>
+    {% endfor %}
+    </div>
+{% endblock %}

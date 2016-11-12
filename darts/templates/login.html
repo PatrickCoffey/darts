@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Darts - Login</title>
+{% endblock %}
+
+{% block header %}
+<h2>User Login</h2>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4"> <!--" col-sm-offset-4">-->
+          <form class="form" method="POST" action="">
+            {% csrf_token %}
+            <!--{{ form.as_p }}-->
+            <div class="form-group">
+              <label for="id_title">Username:</label>
+              <input class="form-control" id="id_username" maxlength="100" name="username" type="text" />
+            </div>
+            <div class="form-group">
+              <label for="id_text">Password:</label>
+              <input class="form-control" id="id_password" name="password" type="password"></input>
+            </div>
+            <input class="btn btn-primary" type="submit" value="Login">
+          </form>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -16,6 +16,29 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from scoreboard.views import test, new_event, view_games, view_teams, current_event
+from noticeboard.views import noticeboard, individual_notice, add_notice
+from accounts.views import login, logout
+
 urlpatterns = [
+    # admin urls
     url(r'^admin/', admin.site.urls),
+    
+    # index
+    url(r'^$', test, name='test'),
+    
+    # noticeboard
+    url(r'^noticeboard/addnotice', add_notice, name='addnotice'),
+    url(r'^noticeboard/(?P<slug>[^\.]+)', individual_notice), 
+    url(r'^noticeboard/', noticeboard, name='noticeboard'),
+    
+    # scoreboard
+    url(r'^scoreboard/newevent', new_event, name='newevent'),
+    url(r'^scoreboard/viewgames', view_games, name='viewgames'),
+    url(r'^scoreboard/viewteams', view_teams, name='viewteams'),
+    url(r'^events/(?P<pk>[^\.]+)', current_event),
+    
+    # accounts
+    url(r'^accounts/logout', logout, name='logout'),
+    url(r'^accounts/login', login, name='login')
 ]

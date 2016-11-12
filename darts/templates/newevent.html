@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+
+{% block title %}
+<title>Darts - New Event</title>
+{% endblock %}
+
+{% block extra_css %}
+{{ form.media }}
+{% endblock %}
+
+{% block header %}
+<h2>Create a new Event</h2>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <div class="row col-sm-4">
+        <form class="form" method="POST" action="">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <input class="btn btn-primary" type="submit" value="Continue"></input>
+        </form>
+      </div>
+    </div>
+{% endblock %}
